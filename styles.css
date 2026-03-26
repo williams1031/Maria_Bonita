@@ -81,15 +81,25 @@ a {
 .brand-mark {
   display: grid;
   place-items: center;
-  width: 48px;
-  height: 48px;
+  width: 58px;
+  height: 58px;
+  padding: 4px;
   border-radius: 50%;
   border: 1px solid rgba(198, 161, 92, 0.42);
-  background: linear-gradient(135deg, #fffdfb, #f5e2e9);
-  color: var(--gold);
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.45rem;
-  font-weight: 700;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.96), rgba(247, 229, 235, 0.88)),
+    linear-gradient(135deg, #fffdfb, #f5e2e9);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    0 10px 24px rgba(164, 22, 88, 0.1);
+}
+
+.brand-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .brand-text {
@@ -655,6 +665,11 @@ a {
   .hero-panel {
     padding: 22px;
     border-radius: 30px;
+  }
+
+  .brand-mark {
+    width: 52px;
+    height: 52px;
   }
 
   .hero-stage {
