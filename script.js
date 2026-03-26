@@ -1,80 +1,99 @@
+const body = document.body;
+const currentPage = body.dataset.page;
+
+document.querySelectorAll(".site-nav a[data-link]").forEach((link) => {
+  if (link.dataset.link === currentPage) {
+    link.classList.add("is-active");
+  }
+});
+
+const header = document.querySelector(".site-header");
+const menuToggle = document.querySelector(".menu-toggle");
+
+if (header && menuToggle) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = header.classList.toggle("menu-open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+}
+
 const revealItems = document.querySelectorAll(".reveal");
 
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  {
-    threshold: 0.2,
-  }
-);
+if (revealItems.length > 0) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.18 }
+  );
 
-revealItems.forEach((item) => revealObserver.observe(item));
+  revealItems.forEach((item) => revealObserver.observe(item));
+}
 
 const counters = document.querySelectorAll("[data-count]");
 
-const animateCounter = (element) => {
-  const target = Number(element.dataset.count);
-  const duration = 1500;
-  const startTime = performance.now();
+if (counters.length > 0) {
+  const animateCounter = (element) => {
+    const target = Number(element.dataset.count);
+    const duration = 1400;
+    const startTime = performance.now();
 
-  const update = (currentTime) => {
-    const progress = Math.min((currentTime - startTime) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    element.textContent = Math.round(target * eased);
+    const tick = (time) => {
+      const progress = Math.min((time - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      element.textContent = String(Math.round(target * eased));
 
-    if (progress < 1) {
-      requestAnimationFrame(update);
-    } else if (target === 100) {
-      element.textContent = "100";
-    }
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      }
+    };
+
+    requestAnimationFrame(tick);
   };
 
-  requestAnimationFrame(update);
-};
+  const counterObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.6 }
+  );
 
-const counterObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        animateCounter(entry.target);
-        counterObserver.unobserve(entry.target);
-      }
-    });
-  },
-  {
-    threshold: 0.7,
-  }
-);
-
-counters.forEach((counter) => counterObserver.observe(counter));
+  counters.forEach((counter) => counterObserver.observe(counter));
+}
 
 const quotes = document.querySelectorAll(".quote");
 const dots = document.querySelectorAll(".dot");
-let activeQuote = 0;
 
-const showQuote = (index) => {
-  quotes.forEach((quote, quoteIndex) => {
-    quote.classList.toggle("active", quoteIndex === index);
+if (quotes.length > 0 && dots.length === quotes.length) {
+  let activeQuote = 0;
+
+  const showQuote = (index) => {
+    quotes.forEach((quote, quoteIndex) => {
+      quote.classList.toggle("active", quoteIndex === index);
+    });
+
+    dots.forEach((dot, dotIndex) => {
+      dot.classList.toggle("active", dotIndex === index);
+    });
+
+    activeQuote = index;
+  };
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => showQuote(index));
   });
 
-  dots.forEach((dot, dotIndex) => {
-    dot.classList.toggle("active", dotIndex === index);
-  });
-
-  activeQuote = index;
-};
-
-dots.forEach((dot, index) => {
-  dot.addEventListener("click", () => showQuote(index));
-});
-
-setInterval(() => {
-  const nextIndex = (activeQuote + 1) % quotes.length;
-  showQuote(nextIndex);
-}, 4500);
+  setInterval(() => {
+    showQuote((activeQuote + 1) % quotes.length);
+  }, 4600);
+}

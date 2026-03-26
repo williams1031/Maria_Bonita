@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Maria Bonita | Glow Store</title>
+    <title>Maria Bonita | Inicio</title>
     <meta
       name="description"
-      content="Tienda de belleza, maquillaje y glow essentials. Descubre una experiencia elegante, femenina y vibrante inspirada en Maria Bonita."
+      content="Maria Bonita es una glow store elegante y femenina con makeup, skincare, accesorios y una experiencia de marca premium."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,26 +16,32 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <div class="page-shell">
-      <header class="topbar">
-        <a class="brand" href="#inicio" aria-label="Maria Bonita">
+  <body data-page="home">
+    <div class="site-frame">
+      <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Maria Bonita inicio">
           <span class="brand-mark">MB</span>
-          <span class="brand-copy">
+          <span class="brand-text">
             <strong>Maria Bonita</strong>
             <small>Glow store</small>
           </span>
         </a>
 
-        <nav class="nav">
-          <a href="#colecciones">Colecciones</a>
-          <a href="#destacados">Destacados</a>
-          <a href="#experiencia">Experiencia</a>
-          <a href="#contacto">Contacto</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Abrir menu">
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-nav">
+          <a data-link="home" href="index.html">Inicio</a>
+          <a data-link="colecciones" href="colecciones.html">Colecciones</a>
+          <a data-link="destacados" href="destacados.html">Destacados</a>
+          <a data-link="experiencia" href="experiencia.html">Experiencia</a>
+          <a data-link="contacto" href="contacto.html">Contacto</a>
         </nav>
 
         <a
-          class="button button-outline"
+          class="button button-outline desktop-cta"
           href="https://www.instagram.com/maria_bonita.d/"
           target="_blank"
           rel="noreferrer"
@@ -44,258 +50,142 @@
         </a>
       </header>
 
-      <div class="mobile-shortcuts">
-        <a href="#colecciones">Colecciones</a>
-        <a href="#destacados">Destacados</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#contacto">Contacto</a>
-      </div>
-
-      <main>
-        <section class="hero" id="inicio">
+      <main class="page page-home">
+        <section class="hero-panel reveal">
           <div class="hero-copy">
-            <span class="eyebrow reveal">Belleza que vibra alto</span>
-            <h1 class="reveal">
-              Tu espacio de <em>makeup</em>, cuidado y estilo con una energia
-              imposible de ignorar.
-            </h1>
-            <p class="reveal">
-              Maria Bonita reune maquillaje, productos de belleza y detalles
-              para consentirte con una estetica femenina, luminosa y moderna.
-              Por ahora la tienda es informativa, pero ya esta lista para
-              enamorar y convertir visitas en pedidos.
+            <span class="eyebrow">Belleza editorial</span>
+            <h1>Una tienda que se siente como lujo rosa, dorado y deseo.</h1>
+            <p>
+              Maria Bonita transforma maquillaje, skincare y detalles de belleza
+              en una experiencia visual mas elegante, femenina y memorable.
             </p>
 
-            <div class="hero-actions reveal">
-              <a
-                class="button button-primary"
-                href="https://www.instagram.com/maria_bonita.d/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Ver Instagram
-              </a>
-              <a class="button button-soft" href="#destacados">
-                Explorar coleccion
-              </a>
+            <div class="button-row">
+              <a class="button button-primary" href="destacados.html">Ver destacados</a>
+              <a class="button button-soft" href="colecciones.html">Explorar colecciones</a>
             </div>
 
-            <ul class="hero-points reveal">
+            <ul class="pill-list">
               <li>Precios irresistibles</li>
               <li>Envios a toda Colombia</li>
-              <li>Venta mayorista y minorista</li>
+              <li>Mayorista y minorista</li>
             </ul>
           </div>
 
-          <div class="hero-visual reveal">
-            <div class="hero-card hero-card-main">
-              <span class="card-kicker">Signature glow</span>
+          <div class="hero-stage">
+            <div class="hero-art hero-art-large">
+              <span class="card-label">Glow signature</span>
               <h2>Brillar y vibrar bonito</h2>
               <p>
-                Una propuesta visual cargada de rosa intenso, acabados dorados
-                y una atmosfera aspiracional inspirada en tu marca.
+                Una direccion visual creada para que la marca se vea mas fina,
+                aspiracional y lista para vender.
               </p>
             </div>
 
-            <div class="hero-card hero-card-float">
-              <span class="mini-pill">Nueva vibra</span>
-              <p>
-                Skincare, makeup, accesorios y una vitrina digital que invita a
-                comprar.
-              </p>
+            <div class="hero-art hero-art-small">
+              <span class="mini-badge">Curated</span>
+              <p>Makeup, skincare y detalles que se sienten como capricho premium.</p>
             </div>
 
-            <div class="orb orb-one"></div>
-            <div class="orb orb-two"></div>
-            <div class="grid-glow"></div>
+            <div class="halo halo-a"></div>
+            <div class="halo halo-b"></div>
+            <div class="mesh"></div>
           </div>
         </section>
 
-        <section class="stats reveal">
+        <section class="stats-bar reveal">
           <article>
             <strong data-count="110">0</strong>
-            <span>Publicaciones de inspiracion</span>
+            <span>Publicaciones que construyen deseo</span>
           </article>
           <article>
             <strong data-count="173">0</strong>
-            <span>Seguidores construyendo comunidad</span>
+            <span>Seguidores conectando con la marca</span>
           </article>
           <article>
             <strong data-count="100">0</strong>
-            <span>% enfoque femenino, elegante y trendy</span>
+            <span>% enfoque femenino, visual y comercial</span>
           </article>
         </section>
 
-        <section class="collections" id="colecciones">
-          <div class="section-heading reveal">
-            <span class="eyebrow">Colecciones</span>
-            <h2>Todo lo que una glow store debe hacer sentir</h2>
-          </div>
-
-          <div class="collection-grid">
-            <article class="collection-card reveal">
-              <span>01</span>
-              <h3>Makeup Crush</h3>
-              <p>
-                Labiales, pestaninas, bases y esenciales para looks suaves o
-                impactantes.
-              </p>
-            </article>
-            <article class="collection-card reveal">
-              <span>02</span>
-              <h3>Skin Ritual</h3>
-              <p>
-                Limpieza, tonico, serum y mascarillas para una rutina que se
-                vea y se sienta premium.
-              </p>
-            </article>
-            <article class="collection-card reveal">
-              <span>03</span>
-              <h3>Hair &amp; Beauty</h3>
-              <p>
-                Productos para peinados, brillo, cuidado y ese acabado prolijo
-                que conquista.
-              </p>
-            </article>
-            <article class="collection-card reveal">
-              <span>04</span>
-              <h3>Giftable Details</h3>
-              <p>
-                Accesorios, kits y detalles visualmente irresistibles para
-                regalar o vender en combo.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="featured" id="destacados">
-          <div class="section-heading reveal">
-            <span class="eyebrow">Destacados</span>
-            <h2>Una vitrina creada para antojar</h2>
-          </div>
-
-          <div class="featured-grid">
-            <article class="product-card reveal">
-              <div class="product-glow"></div>
-              <span class="product-tag">Top seller</span>
-              <h3>Glow Makeup Edit</h3>
-              <p>
-                Seleccion pensada para rostros luminosos, femeninos y listos
-                para foto.
-              </p>
-              <a href="#contacto">Pedir por catalogo</a>
-            </article>
-
-            <article class="product-card reveal">
-              <div class="product-glow"></div>
-              <span class="product-tag">Rutina ideal</span>
-              <h3>Skin Prep Ritual</h3>
-              <p>
-                Una narrativa visual enfocada en limpieza, hidratacion y
-                preparacion de la piel.
-              </p>
-              <a href="#contacto">Quiero informacion</a>
-            </article>
-
-            <article class="product-card reveal">
-              <div class="product-glow"></div>
-              <span class="product-tag">Muy pronto</span>
-              <h3>Bundles Maria Bonita</h3>
-              <p>
-                Combos listos para compra online cuando integremos el carrito y
-                stock real.
-              </p>
-              <a href="#contacto">Avisarme</a>
-            </article>
-          </div>
-        </section>
-
-        <section class="experience" id="experiencia">
-          <div class="experience-copy reveal">
-            <span class="eyebrow">Experiencia</span>
-            <h2>Elegante, dinamica y adictiva sin perder claridad comercial</h2>
+        <section class="editorial-grid">
+          <article class="feature-card reveal">
+            <span class="section-kicker">Esencia</span>
+            <h3>Una identidad mas pulida y con presencia premium</h3>
             <p>
-              La idea de esta primera version es que la marca se sienta viva:
-              movimiento suave, brillo controlado, secciones que respiran y una
-              estetica lista para recibir luego catalogo, carrito y pagos.
+              La nueva direccion apuesta por composiciones limpias, mucho aire,
+              tipografia con caracter y capas visuales que elevan la marca.
             </p>
-            <div class="benefit-list">
-              <div>
-                <strong>Visual premium</strong>
-                <span>Paleta fucsia, beige, dorado y blanco con profundidad.</span>
-              </div>
-              <div>
-                <strong>Conversion simple</strong>
-                <span>Llamados directos a Instagram mientras llega el e-commerce.</span>
-              </div>
-              <div>
-                <strong>Escalable</strong>
-                <span>Estructura lista para productos, reviews y checkout futuro.</span>
-              </div>
-            </div>
-          </div>
+          </article>
 
-          <div class="testimonial-card reveal">
-            <div class="quote-slider" aria-live="polite">
-              <p class="quote active">
-                "Una tienda de belleza debe sentirse como un capricho bonito que
-                si o si quieres abrir."
-              </p>
-              <p class="quote">
-                "El objetivo es que la marca se vea confiable, femenina y lista
-                para vender desde el primer scroll."
-              </p>
-              <p class="quote">
-                "Diseno informativo ahora, experiencia de compra despues, sin
-                rehacer la identidad."
-              </p>
-            </div>
+          <article class="feature-card reveal accent-card">
+            <span class="section-kicker">Ahora</span>
+            <h3>Sitio informativo con imagen de boutique digital</h3>
+            <p>
+              La base queda lista para escalar a catalogo real, carrito, pagos
+              y automatizacion sin rehacer la web desde cero.
+            </p>
+          </article>
 
-            <div class="slider-dots" aria-label="Testimonios">
-              <button class="dot active" type="button" aria-label="Frase 1"></button>
-              <button class="dot" type="button" aria-label="Frase 2"></button>
-              <button class="dot" type="button" aria-label="Frase 3"></button>
-            </div>
-          </div>
+          <article class="quote-card reveal">
+            <p class="quote-mark">"Maria Bonita no solo muestra productos. Ahora vende una atmosfera."</p>
+          </article>
         </section>
 
-        <section class="contact" id="contacto">
-          <div class="contact-panel reveal">
-            <span class="eyebrow">Contacto</span>
-            <h2>Maria Bonita esta lista para recibir pedidos y crecer a tienda completa</h2>
+        <section class="split-section reveal">
+          <div class="split-copy">
+            <span class="section-kicker">Navegacion real</span>
+            <h2>El encabezado ya no te deja en una sola pagina.</h2>
             <p>
-              Esta version ya posiciona la marca con presencia profesional. El
-              siguiente paso sera conectar catalogo real, carrito, pagos y
-              automatizacion de pedidos.
+              Cada boton del menu conduce a una vista diferente: inicio,
+              colecciones, destacados, experiencia y contacto.
             </p>
+            <a class="text-link" href="experiencia.html">Descubrir experiencia</a>
+          </div>
 
-            <div class="contact-actions">
-              <a
-                class="button button-primary"
-                href="https://www.instagram.com/maria_bonita.d/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Ir al Instagram
-              </a>
-              <a class="button button-soft" href="mailto:hello@mariabonita.store">
-                Solicitar version e-commerce
-              </a>
-            </div>
+          <div class="split-stack">
+            <article>
+              <strong>Inicio</strong>
+              <span>Presentacion elegante y editorial.</span>
+            </article>
+            <article>
+              <strong>Colecciones</strong>
+              <span>Segmentacion clara por lineas.</span>
+            </article>
+            <article>
+              <strong>Destacados</strong>
+              <span>Productos y edits visuales.</span>
+            </article>
+            <article>
+              <strong>Experiencia</strong>
+              <span>Relato de marca y propuesta.</span>
+            </article>
           </div>
         </section>
       </main>
+
+      <footer class="site-footer">
+        <div>
+          <strong>Maria Bonita</strong>
+          <span>Glow store con energia femenina, elegante y comercial.</span>
+        </div>
+        <div class="footer-links">
+          <a href="colecciones.html">Colecciones</a>
+          <a href="destacados.html">Destacados</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </footer>
     </div>
 
-    <div class="mobile-cta">
-      <a class="button button-soft" href="#destacados">Ver coleccion</a>
+    <div class="mobile-bar">
+      <a href="destacados.html">Destacados</a>
       <a
-        class="button button-primary"
+        class="mobile-bar-primary"
         href="https://www.instagram.com/maria_bonita.d/"
         target="_blank"
         rel="noreferrer"
       >
-        Ir al Instagram
+        Instagram
       </a>
     </div>
 
