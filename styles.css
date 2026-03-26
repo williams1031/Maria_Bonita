@@ -31,6 +31,7 @@ body {
     radial-gradient(circle at top left, rgba(235, 42, 140, 0.18), transparent 30%),
     radial-gradient(circle at 85% 15%, rgba(201, 162, 76, 0.22), transparent 25%),
     linear-gradient(180deg, #fff8f4 0%, #fff5f0 45%, #fffdfb 100%);
+  padding-bottom: env(safe-area-inset-bottom, 0);
 }
 
 body::before {
@@ -72,6 +73,11 @@ a {
   background: rgba(255, 252, 250, 0.72);
   box-shadow: var(--shadow);
   backdrop-filter: blur(18px);
+}
+
+.mobile-shortcuts,
+.mobile-cta {
+  display: none;
 }
 
 .brand {
@@ -603,47 +609,163 @@ a {
   .hero h1 {
     max-width: 11ch;
   }
-
-  .stats {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 720px) {
   .page-shell {
-    width: min(100% - 18px, 1200px);
+    width: min(100% - 16px, 1200px);
+    padding-bottom: 104px;
   }
 
   .topbar {
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 22px;
     top: 8px;
-    gap: 12px;
-    padding: 14px;
-    border-radius: 26px;
   }
 
   .button-outline {
-    display: none;
+    display: inline-flex;
+    min-height: 42px;
+    padding: 0 16px;
+    font-size: 0.88rem;
   }
 
-  .hero h1 {
-    font-size: clamp(3rem, 17vw, 4.7rem);
+  .brand {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .brand-mark {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .brand-copy strong {
+    font-size: 0.95rem;
+  }
+
+  .brand-copy small {
+    font-size: 0.8rem;
+  }
+
+  .mobile-shortcuts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 14px 0 0;
+  }
+
+  .mobile-shortcuts a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 14px;
+    border: 1px solid rgba(201, 162, 76, 0.16);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.72);
+    color: var(--fuchsia-deep);
+    font-size: 0.88rem;
+    font-weight: 700;
+    box-shadow: 0 10px 24px rgba(121, 26, 71, 0.08);
+  }
+
+  .hero {
+    gap: 20px;
+    padding-top: 28px;
+  }
+
+  .hero-copy {
+    order: 2;
   }
 
   .hero-visual {
-    min-height: 500px;
+    order: 1;
+    min-height: 420px;
+    border-radius: 28px;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    font-size: clamp(2.9rem, 16vw, 4.5rem);
+    line-height: 0.92;
+  }
+
+  .hero p,
+  .experience-copy p,
+  .contact-panel p {
+    font-size: 0.96rem;
+    line-height: 1.75;
+  }
+
+  .hero-actions,
+  .contact-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions .button,
+  .contact-actions .button {
+    width: 100%;
+  }
+
+  .hero-points {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-points li {
+    text-align: center;
   }
 
   .hero-card-main {
     top: 24px;
     left: 18px;
     width: calc(100% - 36px);
-    padding: 22px;
+    padding: 20px;
   }
 
   .hero-card-float {
     right: 18px;
     bottom: 20px;
     width: calc(100% - 36px);
+    padding: 18px;
+  }
+
+  .orb-one {
+    right: 20px;
+    top: 100px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .orb-two {
+    left: 24px;
+    bottom: 94px;
+    width: 96px;
+    height: 96px;
+  }
+
+  .grid-glow {
+    right: 30px;
+    top: 170px;
+    width: 140px;
+    height: 140px;
+    background-size: 18px 18px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 22px;
+  }
+
+  .stats article {
+    padding: 18px;
   }
 
   .collections,
@@ -657,6 +779,7 @@ a {
   .experience-copy h2,
   .contact-panel h2 {
     font-size: clamp(2.4rem, 12vw, 3.5rem);
+    line-height: 0.95;
   }
 
   .contact-panel,
@@ -664,5 +787,73 @@ a {
   .collection-card,
   .product-card {
     padding: 24px;
+  }
+
+  .collection-card,
+  .product-card {
+    min-height: auto;
+    border-radius: 24px;
+  }
+
+  .experience {
+    gap: 18px;
+  }
+
+  .testimonial-card {
+    min-height: 320px;
+  }
+
+  .quote-slider {
+    min-height: 180px;
+  }
+
+  .quote {
+    font-size: clamp(1.7rem, 9vw, 2.4rem);
+  }
+
+  .contact-panel {
+    border-radius: 24px;
+  }
+
+  .mobile-cta {
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: 30;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 22px;
+    background: rgba(255, 250, 247, 0.84);
+    box-shadow: 0 16px 38px rgba(121, 26, 71, 0.16);
+    backdrop-filter: blur(18px);
+  }
+
+  .mobile-cta .button {
+    min-height: 50px;
+    padding: 0 14px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .topbar {
+    flex-wrap: wrap;
+  }
+
+  .button-outline {
+    width: 100%;
+  }
+
+  .hero-card-main h2 {
+    font-size: 2.3rem;
+  }
+
+  .hero-card-main p,
+  .hero-card-float p {
+    font-size: 0.9rem;
   }
 }
