@@ -1,5 +1,13 @@
 const body = document.body;
 const currentPage = body.dataset.page;
+const root = document.documentElement;
+
+const storedTheme = localStorage.getItem("mb-theme");
+if (storedTheme === "dark" || storedTheme === "light") {
+  root.dataset.theme = storedTheme;
+} else {
+  root.dataset.theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
 
 document.querySelectorAll(".site-nav a[data-link]").forEach((link) => {
   if (link.dataset.link === currentPage) {
@@ -14,6 +22,16 @@ if (header && menuToggle) {
   menuToggle.addEventListener("click", () => {
     const isOpen = header.classList.toggle("menu-open");
     menuToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+}
+
+const themeToggle = document.querySelector(".theme-toggle");
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+    root.dataset.theme = nextTheme;
+    localStorage.setItem("mb-theme", nextTheme);
   });
 }
 
@@ -96,4 +114,14 @@ if (quotes.length > 0 && dots.length === quotes.length) {
   setInterval(() => {
     showQuote((activeQuote + 1) % quotes.length);
   }, 4600);
+}
+
+const infoFab = document.querySelector(".info-fab");
+const infoFabToggle = document.querySelector(".info-fab-toggle");
+
+if (infoFab && infoFabToggle) {
+  infoFabToggle.addEventListener("click", () => {
+    const isOpen = infoFab.classList.toggle("is-open");
+    infoFabToggle.setAttribute("aria-expanded", String(isOpen));
+  });
 }

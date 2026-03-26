@@ -39,7 +39,10 @@
           <a data-link="experiencia" href="experiencia.html">Experiencia</a>
           <a data-link="contacto" href="contacto.html">Contacto</a>
         </nav>
-        <a class="button button-outline desktop-cta" href="https://www.instagram.com/maria_bonita.d/" target="_blank" rel="noreferrer">Instagram</a>
+        <button class="theme-toggle" type="button" aria-label="Cambiar tema">
+          <span class="theme-toggle-sun">Claro</span>
+          <span class="theme-toggle-moon">Oscuro</span>
+        </button>
       </header>
 
       <main class="page">
@@ -95,9 +98,13 @@
       </footer>
     </div>
 
-    <div class="mobile-bar">
-      <a href="destacados.html">Destacados</a>
-      <a class="mobile-bar-primary" href="https://www.instagram.com/maria_bonita.d/" target="_blank" rel="noreferrer">Instagram</a>
+    <div class="info-fab">
+      <div class="info-fab-menu">
+        <a class="info-link whatsapp" href="#" aria-label="WhatsApp">WhatsApp</a>
+        <a class="info-link facebook" href="#" aria-label="Facebook">Facebook</a>
+        <a class="info-link instagram" href="https://www.instagram.com/maria_bonita.d/" target="_blank" rel="noreferrer" aria-label="Instagram">Instagram</a>
+      </div>
+      <button class="info-fab-toggle" type="button" aria-expanded="false" aria-label="Abrir informacion">Info</button>
     </div>
 
     <script src="script.js"></script>
