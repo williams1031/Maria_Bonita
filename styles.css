@@ -763,10 +763,11 @@ a {
 .info-fab-toggle {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  gap: 12px;
   min-height: 50px;
   min-width: 132px;
-  padding: 0 18px;
+  padding: 0 14px 0 12px;
   border: 1px solid rgba(255, 255, 255, 0.64);
   border-radius: 999px;
   background: rgba(255, 250, 247, 0.9);
@@ -777,6 +778,7 @@ a {
 }
 
 .info-fab-toggle {
+  justify-content: center;
   min-width: 92px;
   border-color: rgba(198, 161, 92, 0.35);
   background: linear-gradient(135deg, var(--rose-deep), var(--rose));
@@ -784,16 +786,50 @@ a {
   cursor: pointer;
 }
 
+.info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  flex: 0 0 34px;
+}
+
+.info-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.info-link span:last-child {
+  line-height: 1;
+}
+
 .info-link.whatsapp {
-  background: rgba(236, 255, 244, 0.95);
+  background: linear-gradient(135deg, rgba(255, 248, 245, 0.96), rgba(248, 236, 239, 0.94));
 }
 
 .info-link.facebook {
-  background: rgba(239, 245, 255, 0.95);
+  background: linear-gradient(135deg, rgba(255, 248, 245, 0.96), rgba(244, 232, 239, 0.94));
 }
 
 .info-link.instagram {
-  background: rgba(255, 241, 248, 0.95);
+  background: linear-gradient(135deg, rgba(255, 247, 244, 0.96), rgba(250, 231, 239, 0.94));
+}
+
+.info-link.whatsapp .info-icon {
+  background: linear-gradient(135deg, #25d366, #1fa855);
+  color: #fff;
+}
+
+.info-link.facebook .info-icon {
+  background: linear-gradient(135deg, #1877f2, #1256b3);
+  color: #fff;
+}
+
+.info-link.instagram .info-icon {
+  background: linear-gradient(135deg, #f58529, #dd2a7b 45%, #8134af 75%, #515bd4);
+  color: #fff;
 }
 
 :root[data-theme="dark"] .info-link {
@@ -803,15 +839,15 @@ a {
 }
 
 :root[data-theme="dark"] .info-link.whatsapp {
-  background: rgba(20, 44, 31, 0.94);
+  background: linear-gradient(135deg, rgba(24, 19, 22, 0.98), rgba(17, 14, 16, 0.98));
 }
 
 :root[data-theme="dark"] .info-link.facebook {
-  background: rgba(20, 31, 51, 0.94);
+  background: linear-gradient(135deg, rgba(24, 19, 22, 0.98), rgba(17, 14, 16, 0.98));
 }
 
 :root[data-theme="dark"] .info-link.instagram {
-  background: rgba(46, 20, 33, 0.94);
+  background: linear-gradient(135deg, rgba(24, 19, 22, 0.98), rgba(17, 14, 16, 0.98));
 }
 
 :root[data-theme="dark"] .brand-mark {
