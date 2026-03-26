@@ -171,6 +171,21 @@ a {
   transform: translateY(-1px);
 }
 
+.cart-nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  padding: 0 !important;
+}
+
+.cart-nav-link svg {
+  width: 19px;
+  height: 19px;
+}
+
 .theme-toggle {
   display: inline-flex;
   align-items: center;
