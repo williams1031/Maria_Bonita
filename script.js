@@ -26,12 +26,23 @@ if (header && menuToggle) {
 }
 
 const themeToggle = document.querySelector(".theme-toggle");
+const updateThemeControl = () => {
+  if (!themeToggle) return;
+  const isDark = root.dataset.theme === "dark";
+  themeToggle.setAttribute("aria-pressed", String(isDark));
+  const label = themeToggle.querySelector(".theme-toggle-label");
+  if (label) {
+    label.textContent = isDark ? "Modo claro" : "Modo oscuro";
+  }
+};
 
 if (themeToggle) {
+  updateThemeControl();
   themeToggle.addEventListener("click", () => {
     const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
     root.dataset.theme = nextTheme;
     localStorage.setItem("mb-theme", nextTheme);
+    updateThemeControl();
   });
 }
 
