@@ -320,6 +320,11 @@ a {
   background: linear-gradient(180deg, rgba(22, 16, 20, 0.94), rgba(15, 11, 14, 0.98));
 }
 
+:root[data-theme="dark"] .map-card {
+  border-color: rgba(255, 255, 255, 0.04);
+  background: linear-gradient(180deg, rgba(22, 16, 20, 0.94), rgba(15, 11, 14, 0.98));
+}
+
 .hero-panel {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
@@ -541,7 +546,8 @@ a {
 .catalog-grid,
 .spotlight-grid,
 .timeline-grid,
-.contact-grid {
+.contact-grid,
+.location-layout {
   display: grid;
   gap: 18px;
   margin-top: 26px;
@@ -558,12 +564,19 @@ a {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.location-layout {
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: stretch;
+  margin-top: 28px;
+}
+
 .feature-card,
 .quote-card,
 .catalog-card,
 .spotlight-card,
 .timeline-card,
-.contact-card {
+.contact-card,
+.map-card {
   padding: 28px;
   border-radius: 32px;
 }
@@ -612,6 +625,55 @@ a {
   margin-top: 28px;
   padding: 30px;
   border-radius: 34px;
+}
+
+.contact-address {
+  margin-top: 0;
+}
+
+.map-card {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  min-height: 360px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  background: linear-gradient(180deg, rgba(255, 252, 250, 0.78), rgba(255, 244, 247, 0.88));
+  box-shadow: var(--shadow);
+}
+
+.map-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.map-card:hover img {
+  transform: scale(1.03);
+}
+
+.map-card-overlay {
+  position: absolute;
+  inset: auto 18px 18px 18px;
+  display: grid;
+  gap: 6px;
+  padding: 18px 20px;
+  border-radius: 24px;
+  background: rgba(23, 13, 20, 0.68);
+  color: #fff7fb;
+  backdrop-filter: blur(14px);
+}
+
+.map-card-overlay strong {
+  font-size: 1.1rem;
+}
+
+.map-card-overlay span {
+  color: rgba(255, 240, 247, 0.84);
+  line-height: 1.55;
 }
 
 .split-section {
@@ -895,7 +957,8 @@ a {
   .catalog-grid,
   .spotlight-grid,
   .timeline-grid,
-  .contact-grid {
+  .contact-grid,
+  .location-layout {
     grid-template-columns: 1fr;
   }
 
