@@ -976,6 +976,10 @@ a {
     border-radius: 28px;
   }
 
+  .footer-links {
+    display: none;
+  }
+
   .menu-toggle {
     display: inline-grid;
     place-items: center;
