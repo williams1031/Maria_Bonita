@@ -44,6 +44,7 @@ body {
     radial-gradient(circle at 82% 12%, rgba(198, 161, 92, 0.2), transparent 24%),
     linear-gradient(180deg, #fffaf6 0%, #fff6f1 50%, #fffdfb 100%);
   transition: background 0.55s ease, color 0.4s ease;
+  position: relative;
 }
 
 :root[data-theme="dark"] body {
@@ -69,6 +70,23 @@ body::before {
 
 :root[data-theme="dark"] body::before {
   opacity: 0.12;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 1800'%3E%3Cpath d='M120 0C40 220 220 260 170 470C120 700 260 860 210 1080C160 1320 260 1500 220 1800' fill='none' stroke='%23d4a03d' stroke-width='24' stroke-linecap='round' opacity='.42'/%3E%3Cpath d='M185 0C95 200 285 285 225 505C165 735 315 870 260 1095C205 1320 325 1505 290 1800' fill='none' stroke='%23ec4d92' stroke-width='34' stroke-linecap='round' opacity='.55'/%3E%3Cpath d='M630 0C560 170 750 250 665 500C585 735 730 860 660 1110C590 1360 730 1520 680 1800' fill='none' stroke='%23d4a03d' stroke-width='24' stroke-linecap='round' opacity='.38'/%3E%3Cpath d='M700 0C615 165 825 255 735 510C645 750 800 890 725 1125C650 1370 805 1520 760 1800' fill='none' stroke='%23ec4d92' stroke-width='34' stroke-linecap='round' opacity='.52'/%3E%3Cpath d='M1010 0C930 210 1120 290 1035 550C955 800 1110 920 1045 1180C980 1435 1125 1570 1085 1800' fill='none' stroke='%23d4a03d' stroke-width='24' stroke-linecap='round' opacity='.38'/%3E%3Cpath d='M1080 0C990 205 1185 305 1100 565C1020 820 1170 930 1105 1190C1040 1455 1185 1585 1150 1800' fill='none' stroke='%23ec4d92' stroke-width='34' stroke-linecap='round' opacity='.5'/%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.12;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+:root[data-theme="dark"] body::after {
+  opacity: 0.08;
+  mix-blend-mode: screen;
 }
 
 a {
@@ -324,6 +342,45 @@ a {
   transition: background 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease;
 }
 
+.hero-panel,
+.feature-card,
+.quote-card,
+.wide-panel,
+.editorial-banner,
+.shop-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-panel::before,
+.feature-card::before,
+.quote-card::before,
+.wide-panel::before,
+.editorial-banner::before,
+.shop-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(236, 77, 146, 0.12), transparent 22%),
+    radial-gradient(circle at 80% 18%, rgba(198, 161, 92, 0.1), transparent 24%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800'%3E%3Cpath d='M95 0C20 130 180 175 130 330C85 475 200 560 160 720C145 770 145 800 145 800' fill='none' stroke='%23ec4d92' stroke-width='18' stroke-linecap='round' opacity='.28'/%3E%3Cpath d='M150 0C80 135 230 180 180 340C140 485 250 565 210 725C195 775 195 800 195 800' fill='none' stroke='%23d4a03d' stroke-width='12' stroke-linecap='round' opacity='.22'/%3E%3Cpath d='M575 0C500 125 665 180 610 345C560 500 675 570 640 730C625 780 625 800 625 800' fill='none' stroke='%23ec4d92' stroke-width='18' stroke-linecap='round' opacity='.24'/%3E%3Cpath d='M635 0C565 125 725 180 670 345C620 500 735 575 700 735C685 785 685 800 685 800' fill='none' stroke='%23d4a03d' stroke-width='12' stroke-linecap='round' opacity='.2'/%3E%3C/svg%3E");
+  background-size: auto, auto, cover;
+  background-position: center, center, center;
+  opacity: 0.58;
+  pointer-events: none;
+}
+
+.hero-panel > *,
+.feature-card > *,
+.quote-card > *,
+.wide-panel > *,
+.editorial-banner > *,
+.shop-card > * {
+  position: relative;
+  z-index: 1;
+}
+
 :root[data-theme="dark"] .hero-panel,
 :root[data-theme="dark"] .feature-card,
 :root[data-theme="dark"] .quote-card,
@@ -338,6 +395,16 @@ a {
 :root[data-theme="dark"] .editorial-banner {
   border-color: rgba(255, 255, 255, 0.04);
   background: linear-gradient(180deg, rgba(22, 16, 20, 0.94), rgba(15, 11, 14, 0.98));
+}
+
+:root[data-theme="dark"] .hero-panel::before,
+:root[data-theme="dark"] .feature-card::before,
+:root[data-theme="dark"] .quote-card::before,
+:root[data-theme="dark"] .wide-panel::before,
+:root[data-theme="dark"] .editorial-banner::before,
+:root[data-theme="dark"] .shop-card::before {
+  opacity: 0.34;
+  filter: saturate(0.9) brightness(0.85);
 }
 
 :root[data-theme="dark"] .map-card {
